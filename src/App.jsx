@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import DefaultLayout from "./layout/DefaultLayout";
+import HomePage from "../pages/HomePage";
+import SingleMoviePage from "../pages/SingleMoviePage";
 function App() {
   
 
@@ -8,8 +10,8 @@ function App() {
      <BrowserRouter>
       <Routes>
         <Route element={<DefaultLayout/>}>
-          <Route index element={<h1>Home</h1>}/>
-          <Route path="/movie/:id" element={<h1>Singol movie</h1>}/>
+          <Route index element={<HomePage/>}/>
+          <Route path="/movie/:id" element={<SingleMoviePage/>}/>
         </Route>
       </Routes>
      </BrowserRouter>
