@@ -10,7 +10,7 @@ function App() {
      <BrowserRouter>
       <Routes>
         <Route element={<DefaultLayout/>}>
-          <Route index element={<HomePage/>}/>
+          <Route path="/movie" element={<HomePage/>}/>
           <Route path="/movie/:id" element={<SingleMoviePage/>}/>
         </Route>
       </Routes>

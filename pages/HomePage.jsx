@@ -35,8 +35,8 @@ export default function HomePage() {
                                     </p>
                                     <p className="d-flex justify-content-end">Release Date: {movie.release_year}</p>
                                     <div  className="d-flex justify-content-end">
-                                        <button>
-                                            <Link to={`/movie/${movie.id}`}>View Movie</Link>
+                                        <button className="btn border bg-primary">
+                                            <Link className="text-decoration-none text-white" to={`/movie/${movie.id}`}>View Movie</Link>
                                         </button>
                                     </div>
 
