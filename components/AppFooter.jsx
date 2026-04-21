@@ -1,11 +1,14 @@
-export default function AppFooter(){
-    return(
+export default function AppFooter() {
+    return (
         <>
-            <div className="container pt-5">
-                <p className="d-flex justify-content-center">&copy; 2026 My App. All rights reserved.</p>
+            <div className="bg-black">
+                <div className="container p-3 text-white">
+                    <p className="d-flex justify-content-center">&copy; 2026 My App. All rights reserved.</p>
+                </div>
             </div>
-            
-        
+
+
+
         </>
     )
 }

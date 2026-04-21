@@ -15,7 +15,7 @@ export default function HomePage() {
 
     return (
         <>
-            <div className="container mt-5">
+            <div className="container mt-5 pb-5">
                 <div className="pb-3">
                     <h1>All Movies</h1>
                     <h3 className="text-secondary">So glad you're here! This is the place where films get discussed, celebrated — and occasionally torn apart. 🎥
@@ -25,7 +25,7 @@ export default function HomePage() {
                 <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     {movies.map(movie => (
                         <div className="col" key={movie.id}>
-                            <div id="movies_card" className="card">
+                            <div id="movies_card" className="card text-white bg-black">
                                 <h4 className="card-title d-flex justify-content-center pt-5">{movie.title}</h4>
                                 <div className="card-body">
                                     <img id="movies_image" src={`${url}/${movie.image}`} alt={movie.title} className="img-fluid" />

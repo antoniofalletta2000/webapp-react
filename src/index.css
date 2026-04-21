@@ -1,5 +1,10 @@
 @import url('bootstrap');
 
+body{
+    background-color: rgb(205, 200, 200);
+}
+
+
 #movies_card {
     height: 100%;
 }
