@@ -30,6 +30,7 @@ body {
     display: none;
     position: absolute;
     transform: translateY(15px);
+    font-size: large;
 }
 
 #movies_card:hover {
