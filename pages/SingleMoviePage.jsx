@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link, NavLink } from "react-router-dom";
 import MovieReviewMap from "../components/MovieReviewMap";
+import FormReview from "../components/FormReview";
+import MovieDetails from "../components/MovieDetails";
+
 
 export default function SingleMoviePage() {
     const { id } = useParams();
@@ -22,25 +25,14 @@ export default function SingleMoviePage() {
         setOpenForm(!openForm);
     }
 
-    function stars({ vote }) {
-        const starsArr = []
-        for (let i = 0; i <= 5; i++) {
-            starsArr.push(
-                <i key={i} className={
-                    i <= vote ? "bi bi-star-fill text-warning" : "bi bi-star text-warning"
-                }></i>
-            )
 
-        }
-        return starsArr;
-    }
 
     return (
         <>
             <div className=" pb-5">
                 <div className="container pt-5">
                     <div className="d-flex justify-content-end pb-3">
-                            <Link className="text-decoration-none text-warning fw-bold" to="/"><i id="exit" class="bi bi-box-arrow-left"></i></Link>
+                        <Link className="text-decoration-none text-warning fw-bold" to="/"><i id="exit" class="bi bi-box-arrow-left"></i></Link>
                     </div>
 
                     <div className="row row-cols-1 row-cols-sm-2 g-4 ">
@@ -51,55 +43,7 @@ export default function SingleMoviePage() {
                         </div>
                         <div className="col d-flex flex-column justify-content-center gap-3 text-black">
 
-                            {openForm ?
-                                <>
-                                    <form action="" className="d-flex flex-column gap-4">
-                                        <div className="input-group">
-                                            <span className="input-group-text" id="basic-addon1">@</span>
-                                            <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
-                                        </div>
-
-                                        <div className="input-group">
-                                            <span className="input-group-text">review</span>
-                                            <textarea className="form-control" aria-label="With textarea" placeholder="Write what you think about this film...">
-                                            </textarea>
-                                        </div>
-
-                                        <select className="form-select">
-                                            <option selected>Select your vote</option>
-                                            <option value="1">⭐</option>
-                                            <option value="2">⭐⭐</option>
-                                            <option value="3">⭐⭐⭐</option>
-                                            <option value="4">⭐⭐⭐⭐</option>
-                                            <option value="5">⭐⭐⭐⭐⭐</option>
-                                        </select>
-
-                                        <button type="submit" className="btn btn-warning mt-3  btn_hover">Submit</button>
-                                    </form>
-
-                                </>
-                                :
-                                <>
-                                    <h1>{movie.title}</h1>
-
-                                    <div>
-                                        <p className="d-flex gap-3"><p className="fw-bold">Genre:</p> {movie.genre}</p>
-                                    </div>
-                                    <div>
-
-                                        <p className="d-flex gap-3"><p className="fw-bold">Abstract:</p> {movie.abstract}</p>
-                                    </div>
-                                    <div>
-                                        <p className="d-flex gap-3"><p className="fw-bold">Release Date:</p> {movie.release_year}</p>
-                                    </div>
-                                    <div>
-                                        <p className="d-flex gap-3"><p className="fw-bold">Director:</p> {movie.director}</p>
-                                    </div>
-                                    <div>
-                                        <p className="d-flex gap-3"><p className="fw-bold">Vote:</p> {stars({ vote: movie.average_vote })}</p>
-                                    </div>
-                                </>
-                            }
+                            {openForm ? <FormReview /> : <MovieDetails movie={movie} />}
 
                             <div className="d-flex justify-content-center px-5 mt-4">
                                 <button onClick={toggleForm} className={`btn border border-0 ${openForm ? "btn-danger" : "btn-warning"} btn_hover`}>
