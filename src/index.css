@@ -1,7 +1,7 @@
 @import url('bootstrap');
 
 body {
-    background-color: rgb(205, 200, 200);
+    background-color: rgb(145, 43, 43);
     font-family: "Oswald", sans-serif;
 }
 
@@ -36,9 +36,24 @@ body {
 #movies_card:hover {
 
     transform: scale(1.1);
-    box-shadow: 0px 0px 15px 5px rgb(49, 65, 213);
+    box-shadow: 0px 0px 15px 5px rgb(235, 176, 38);
 
     #icon_eye {
         display: block;
     }
+
+    #movies_image {
+        filter: opacity(75%);
+        
+    }
+}
+
+#exit{
+    font-size:xx-large
+}
+
+.btn_hover:hover{
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 5px 1px rgb(235, 176, 38);
+    transform: translateY(-5px);
 }

@@ -16,7 +16,7 @@ export default function AdminPage() {
     return (
         <>
             <div className="d-flex justify-content-center pt-3">
-                <h1>Movies List</h1>
+                <h1 className="text-warning fw-bold">Movies List</h1>
             </div>
             <table className="table table-dark table-striped mt-3">
                 <thead>

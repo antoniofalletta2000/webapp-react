@@ -35,8 +35,8 @@ export default function MoviesMap({ movie }) {
                             </p>
                             <p className="d-flex justify-content-end gap-2"><p className="fw-bold">Release Date:</p> {movie.release_year}</p>
                             <div className="d-flex justify-content-end">
-                                <button className="btn border border-0 bg-primary">
-                                    <Link className="text-decoration-none text-white" to={`/movie/${movie.id}`}>View Movie</Link>
+                                <button className="btn border border-0 bg-warning btn_hover">
+                                    <Link className="text-decoration-none text-black" to={`/movie/${movie.id}`}>View Movie</Link>
                                 </button>
                             </div>
                         </>
