@@ -1,7 +1,8 @@
 @import url('bootstrap');
 
-body{
+body {
     background-color: rgb(205, 200, 200);
+    font-family: "Oswald", sans-serif;
 }
 
 
@@ -16,23 +17,23 @@ body{
     object-fit: cover;
 }
 
-#movie_image{
+#movie_image {
     width: 100%;
     height: 100%;
-    aspect-ratio: 1/1; 
+    aspect-ratio: 1/1;
     object-position: top;
     object-fit: contain;
-    
+
 }
 
-#icon_eye{
+#icon_eye {
     display: none;
     position: absolute;
     transform: translateY(15px);
 }
 
-#movies_card:hover{
-    #icon_eye{
+#movies_card:hover {
+    #icon_eye {
         display: block;
     }
 }
