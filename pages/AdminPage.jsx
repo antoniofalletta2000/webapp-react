@@ -27,51 +27,17 @@ export default function AdminPage() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        {movies.find(movie => movie.id === 1) &&
-                            <td>{movies.find(movie => movie.id === 1).title}</td>}
-                        {movies.find(movie => movie.id === 1) &&
-                            <td>{movies.find(movie => movie.id === 1).genre}</td>}
-                        {movies.find(movie => movie.id === 1) &&
-                            <td>{movies.find(movie => movie.id === 1).updated_at}</td>}
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        {movies.find(movie => movie.id === 2) &&
-                            <td>{movies.find(movie => movie.id === 2).title}</td>}
-                        {movies.find(movie => movie.id === 2) &&
-                            <td>{movies.find(movie => movie.id === 2).genre}</td>}
-                        {movies.find(movie => movie.id === 2) &&
-                            <td>{movies.find(movie => movie.id === 2).updated_at}</td>}
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        {movies.find(movie => movie.id === 3) &&
-                            <td>{movies.find(movie => movie.id === 3).title}</td>}
-                        {movies.find(movie => movie.id === 3) &&
-                            <td>{movies.find(movie => movie.id === 3).genre}</td>}
-                        {movies.find(movie => movie.id === 3) &&
-                            <td>{movies.find(movie => movie.id === 3).updated_at}</td>}
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        {movies.find(movie => movie.id === 4) &&
-                            <td>{movies.find(movie => movie.id === 4).title}</td>}
-                        {movies.find(movie => movie.id === 4) &&
-                            <td>{movies.find(movie => movie.id === 4).genre}</td>}
-                        {movies.find(movie => movie.id === 4) &&
-                            <td>{movies.find(movie => movie.id === 4).updated_at}</td>}
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        {movies.find(movie => movie.id === 5) &&
-                            <td>{movies.find(movie => movie.id === 5).title}</td>}
-                        {movies.find(movie => movie.id === 5) &&
-                            <td>{movies.find(movie => movie.id === 5).genre}</td>}
-                        {movies.find(movie => movie.id === 5) &&
-                            <td>{movies.find(movie => movie.id === 5).updated_at}</td>}
-                    </tr>
+                    {movies.map(movie => (
+                        <tr>
+                            <th scope="row">{movie.id}</th>
+
+                            <td>{movie.title}</td>
+                            <td>{movie.genre}</td>
+                            <td>{movie.updated_at}</td>
+                        </tr>
+                    ))}
+
+
                 </tbody>
             </table>
         </>
