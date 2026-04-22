@@ -7,6 +7,7 @@ body{
 
 #movies_card {
     height: 100%;
+    position: relative;
 }
 
 #movies_image {
@@ -22,4 +23,16 @@ body{
     object-position: top;
     object-fit: contain;
     
+}
+
+#icon_eye{
+    display: none;
+    position: absolute;
+    transform: translateY(15px);
+}
+
+#movies_card:hover{
+    #icon_eye{
+        display: block;
+    }
 }

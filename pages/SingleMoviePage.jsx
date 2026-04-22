@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link, NavLink } from "react-router-dom";
+import MovieReviewMap from "../components/MovieReviewMap";
 
 export default function SingleMoviePage() {
     const { id } = useParams();
@@ -21,8 +22,8 @@ export default function SingleMoviePage() {
             <div className=" pb-5">
                 <div className="container pt-5">
                     <div className="d-flex justify-content-end">
-                        <button className="btn border bg-primary">
-                            <Link className="text-decoration-none text-white" to="/movie">Back to Home Page</Link>
+                        <button className="btn border border-0 bg-primary">
+                            <Link className="text-decoration-none text-white" to="/">Back to Home Page</Link>
                         </button>
                     </div>
 
@@ -33,10 +34,9 @@ export default function SingleMoviePage() {
 
                         </div>
                         <div className="col d-flex flex-column justify-content-center gap-3">
-                            <div className="d-flex gap-3 align-items-end ">
-                                <p className="fw-bold">Title:</p>
+                            
                                 <h1>{movie.title}</h1>
-                            </div>
+                            
                             <div>
                                 <p className="d-flex gap-3"><p className="fw-bold">Genre:</p> {movie.genre}</p>
                             </div>
@@ -57,16 +57,7 @@ export default function SingleMoviePage() {
                         <h2>RECENSIONI:</h2>
                     </div>
                     {movie.reviews?.map((review) => (
-                        <div key={review.id} className="border rounded p-3 mt-3 d-flex flex-column gap-4 bg-black" >
-                            <div className="bg-light">
-                                <h5 className="d-flex justify-content-center">{review.name}</h5>
-                            </div>
-                            <div className="text-white">
-                                <p className="d-flex gap-3"><p className="fw-bold">Commento:</p>{review.text}</p>
-                                <p className="d-flex gap-3"><p className="fw-bold">Voto:</p>{review.vote}</p>
-                            </div>
-
-                        </div>
+                        <MovieReviewMap key={review.id} review={review} />
                     ))}
 
                 </div>
