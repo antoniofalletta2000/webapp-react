@@ -25,13 +25,13 @@ export default function AdminPage() {
                         <th scope="col">Title</th>
                         <th scope="col">Genre</th>
                         <th scope="col">Updated at</th>
+                        <th scope="col">Commands</th>
                     </tr>
                 </thead>
                 <tbody>
                     {movies.map(movie => (
                         <AdminMap movie={movie}/>
                     ))}
-
 
                 </tbody>
             </table>

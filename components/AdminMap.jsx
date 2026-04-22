@@ -7,6 +7,7 @@ export default function AdminMap({ movie }) {
                 <td>{movie.title}</td>
                 <td>{movie.genre}</td>
                 <td>{movie.updated_at}</td>
+                <td><button type="button" className="btn border border-0 bg-danger">Delete</button></td>
             </tr>
         </>
     )
