@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import AdminMap from "../components/AdminMap";
 
 export default function AdminPage() {
 
@@ -28,13 +29,7 @@ export default function AdminPage() {
                 </thead>
                 <tbody>
                     {movies.map(movie => (
-                        <tr>
-                            <th scope="row">{movie.id}</th>
-
-                            <td>{movie.title}</td>
-                            <td>{movie.genre}</td>
-                            <td>{movie.updated_at}</td>
-                        </tr>
+                        <AdminMap movie={movie}/>
                     ))}
 
 

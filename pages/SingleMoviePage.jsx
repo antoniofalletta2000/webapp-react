@@ -96,9 +96,6 @@ export default function SingleMoviePage() {
 
                     </div>
 
-
-
-
                     <div className="d-flex justify-content-center pt-5">
                         <h2>RECENSIONI:</h2>
                     </div>
