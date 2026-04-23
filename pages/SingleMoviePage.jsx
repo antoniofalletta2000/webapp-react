@@ -13,11 +13,13 @@ export default function SingleMoviePage() {
     const endpoint = `http://localhost:3000/movies/${id}`;
     const [openForm, setOpenForm] = useState(false);
 
-    useEffect(() => {
+    function refreshData(){
         fetch(endpoint)
             .then(res => res.json())
             .then(data => setMovie(data));
-    }, []);
+    }
+
+    useEffect(refreshData, []);
 
     if (movie === null) return <p>Loading...</p>;
 
@@ -43,7 +45,7 @@ export default function SingleMoviePage() {
                         </div>
                         <div className="col d-flex flex-column justify-content-center gap-3 text-black">
 
-                            {openForm ? <FormReview /> : <MovieDetails movie={movie} />}
+                            {openForm ? <FormReview id={id} refreshData={refreshData} /> : <MovieDetails movie={movie} />}
 
                             <div className="d-flex justify-content-center px-5 mt-4">
                                 <button onClick={toggleForm} className={`btn border border-0 ${openForm ? "btn-danger" : "btn-warning"} btn_hover`}>
