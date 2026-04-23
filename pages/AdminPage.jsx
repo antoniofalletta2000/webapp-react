@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 import AdminMap from "../components/AdminMap";
+import AdminForm from "../components/AdminForm"
 
 export default function AdminPage() {
 
     const [movies, setMovies] = useState([]);
     const endpoint = "http://localhost:3000/movies"
 
-    useEffect(() => {
+    function refreshTable(){
         fetch(endpoint)
             .then(res => res.json())
             .then(data => setMovies(data))
-    }, [])
+    }
+
+    useEffect(refreshTable, [])
 
 
     return (
@@ -23,6 +26,7 @@ export default function AdminPage() {
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Title</th>
+                        <th scope="col">Director</th>
                         <th scope="col">Genre</th>
                         <th scope="col">Updated at</th>
                         <th scope="col">Commands</th>
@@ -30,11 +34,14 @@ export default function AdminPage() {
                 </thead>
                 <tbody>
                     {movies.map(movie => (
-                        <AdminMap movie={movie}/>
+                        <AdminMap key={movie.id} movie={movie} />
                     ))}
 
                 </tbody>
             </table>
+
+          <AdminForm refreshTable={refreshTable}/>
+            
         </>
 
 
