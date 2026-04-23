@@ -8,8 +8,13 @@ body {
 }
 
 #span{
-    background-color: rgb(160, 52, 52);
+    background-color: rgba(174, 48, 48, 0.795);
+
+    #span_welcome{
+        color: rgb(236, 236, 71);
+    }
 }
+
 
 #movie_details_review{
     background-color: rgb(160, 52, 52);

@@ -44,17 +44,17 @@ export default function FormReview({ id, refreshData }) {
             <SubmissionStatus submissionStatus={submissionStatus} />
             <form action="" className="d-flex flex-column gap-4" onSubmit={handleSubmit}>
                 <div className="input-group">
-                    <span className="input-group-text" id="basic-addon1">@</span>
-                    <input type="text" className="form-control" placeholder="Username" aria-label="Username" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
+                    <span className="input-group-text bg-warning border border-black" id="basic-addon1">@</span>
+                    <input type="text" className="form-control border border-black" placeholder="Username" aria-label="Username" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
                 </div>
 
                 <div className="input-group">
-                    <span className="input-group-text">review</span>
-                    <textarea className="form-control" aria-label="With textarea" placeholder="Write what you think about this film..." value={formData.text} onChange={(e) => setFormData({ ...formData, text: e.target.value })}>
+                    <span className="input-group-text bg-warning border border-black">review</span>
+                    <textarea className="form-control border border-black" aria-label="With textarea" placeholder="Write what you think about this film..." value={formData.text} onChange={(e) => setFormData({ ...formData, text: e.target.value })}>
                     </textarea>
                 </div>
 
-                <select className="form-select" value={formData.vote} onChange={(e) => setFormData({ ...formData, vote: parseInt(e.target.value) })}>
+                <select className="form-select border border-black" value={formData.vote} onChange={(e) => setFormData({ ...formData, vote: parseInt(e.target.value) })}>
                     <option selected>Select your vote</option>
                     <option value="1">⭐</option>
                     <option value="2">⭐⭐</option>
