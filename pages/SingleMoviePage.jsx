@@ -56,8 +56,11 @@ export default function SingleMoviePage() {
 
                     </div>
 
-                    <div className="d-flex justify-content-center pt-5">
-                        <h2 className="text-black">RECENSIONI:</h2>
+                    <div  className="d-flex justify-content-center pt-5 ">
+                        <div className="card bg-black px-4">
+                            <h2 className="text-warning">RECENSIONI:</h2>
+                        </div>
+                        
                     </div>
                     {movie.reviews?.map((review) => (
                         <MovieReviewMap key={review.id} review={review} />
