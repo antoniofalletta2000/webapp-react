@@ -5,7 +5,8 @@ export default function AdminForm({ refreshTable }) {
     const initialFormData = {
         title: "",
         director: "",
-        genre: ""
+        genre: "",
+        image:""
     }
     const [formData, setFormData] = useState(initialFormData)
     const [submissionStatus, setSubmissionStatus] = useState(null)
@@ -28,7 +29,7 @@ export default function AdminForm({ refreshTable }) {
                     setSubmissionStatus("success")
                     refreshTable()
                     setTimeout(() => {
-                        setFormData(initialFormData)
+                        //setFormData(initialFormData)
                         setSubmissionStatus(null)
                     }, 2000)
                 }
@@ -43,14 +44,18 @@ export default function AdminForm({ refreshTable }) {
 
     return (
         <>
-            {submissionStatus === "success" &&
-                <div className="alert alert-success" role="alert">
-                    Movie added successfully!
-                </div>}
-            {submissionStatus === "error" &&
-                <div className="alert alert-danger" role="alert">
-                    Error adding movie. Please complete all fields and try again.
-                </div>}
+            <div className="container">
+                {submissionStatus === "success" &&
+                    <div className="alert alert-success" role="alert">
+                        Movie added successfully!
+                    </div>}
+                {submissionStatus === "error" &&
+                    <div className="alert alert-danger" role="alert">
+                        Error adding movie. Please complete all fields and try again.
+                    </div>}
+            </div>
+
+
             <form onSubmit={handleSubmit}>
                 <div className="container card bg-warning">
 
@@ -66,6 +71,10 @@ export default function AdminForm({ refreshTable }) {
                         <div className="d-flex gap-2">
                             <h3>Genre:</h3>
                             <input className="rounded" type="text" value={formData.genre} onChange={(e) => setFormData({ ...formData, genre: e.target.value })} />
+                        </div>
+                        <div className="d-flex gap-2">
+                            <h3>Image:</h3>
+                            <input className="rounded" type="text" value={formData.image} onChange={(e) => setFormData({ ...formData, image: e.target.value })} />
                         </div>
                     </div>
 

@@ -17,7 +17,6 @@ export default function HomePage() {
         <>
             <div className="container mt-5 pb-5">
                 <div id="span" className="p-3 card border-0">
-                    <h1 className="text-black fw-bold">All Movies</h1>
                     <h3 id="span_welcome">So glad you're here! This is the place where films get discussed, celebrated — and occasionally torn apart. 🎥
                         <br />
                         Browse the list, find a movie you've seen, and drop a review — long, short, passionate or brutal: as long as it's honest, it belongs here!🍿</h3>
