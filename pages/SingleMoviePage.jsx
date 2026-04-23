@@ -43,7 +43,7 @@ export default function SingleMoviePage() {
                             <img id="movie_image" src={`${url}/${movie.image}`} alt={movie.title} className="img-fluid" />
 
                         </div>
-                        <div className="col d-flex flex-column justify-content-center gap-3 text-black">
+                        <div id="movie_details_review" className="col d-flex flex-column justify-content-center gap-3 text-black card">
 
                             {openForm ? <FormReview id={id} refreshData={refreshData} /> : <MovieDetails movie={movie} />}
 

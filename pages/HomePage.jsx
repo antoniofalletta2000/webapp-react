@@ -16,7 +16,7 @@ export default function HomePage() {
     return (
         <>
             <div className="container mt-5 pb-5">
-                <div className="pb-3">
+                <div id="span" className="p-3 card">
                     <h1 className="text-black fw-bold">All Movies</h1>
                     <h3 className="text-warning">So glad you're here! This is the place where films get discussed, celebrated — and occasionally torn apart. 🎥
                         <br />
