@@ -21,7 +21,7 @@ export default function SingleMoviePage() {
 
         fetch(endpoint)
             .then(res => res.json())
-            .then(data => setMovie(data))
+            .then(data => {setMovie(data), console.log(data)})
             .finally(()=>{setIsLoading(false)})
     }
 
@@ -40,7 +40,7 @@ export default function SingleMoviePage() {
             <div className=" pb-5">
                 <div className="container pt-5">
                     <div className="d-flex justify-content-end pb-3">
-                        <Link className="text-decoration-none text-warning fw-bold" to="/"><i id="exit" class="bi bi-box-arrow-left"></i></Link>
+                        <Link className="text-decoration-none text-warning fw-bold" to="/"><i id="exit" className="bi bi-box-arrow-left"></i></Link>
                     </div>
 
                     <div className="row row-cols-1 row-cols-sm-2 g-4 ">

@@ -17,20 +17,20 @@ export default function MovieDetails({ movie }) {
             <h1>{movie.title}</h1>
 
             <div>
-                <p className="d-flex gap-3"><p className="fw-bold">Genre:</p> {movie.genre}</p>
+                <p className="d-flex gap-3"><span className="fw-bold">Genre:</span> {movie.genre}</p>
             </div>
             <div>
 
-                <p className="d-flex gap-3"><p className="fw-bold">Abstract:</p> {movie.abstract}</p>
+                <p className="d-flex gap-3"><span className="fw-bold">Abstract:</span> {movie.abstract}</p>
             </div>
             <div>
-                <p className="d-flex gap-3"><p className="fw-bold">Release Date:</p> {movie.release_year}</p>
+                <p className="d-flex gap-3"><span className="fw-bold">Release Date:</span> {movie.release_year}</p>
             </div>
             <div>
-                <p className="d-flex gap-3"><p className="fw-bold">Director:</p> {movie.director}</p>
+                <p className="d-flex gap-3"><span className="fw-bold">Director:</span> {movie.director}</p>
             </div>
             <div>
-                <p className="d-flex gap-3"><p className="fw-bold">Vote:</p> {stars({ vote: movie.average_vote })}</p>
+                <p className="d-flex gap-3"><span className="fw-bold">Vote:</span> {stars({ vote: movie.average_vote })}</p>
             </div>
         </>
     )
