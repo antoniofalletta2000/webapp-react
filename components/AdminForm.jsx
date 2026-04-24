@@ -6,7 +6,7 @@ export default function AdminForm({ refreshTable }) {
         title: "",
         director: "",
         genre: "",
-        image:""
+        image: ""
     }
     const [formData, setFormData] = useState(initialFormData)
     const [submissionStatus, setSubmissionStatus] = useState(null)
@@ -15,13 +15,16 @@ export default function AdminForm({ refreshTable }) {
         e.preventDefault()
         console.log(formData);
 
+        const formDataObject = new FormData();
+        formDataObject.append("title", formData.title ) 
+        formDataObject.append("director", formData.director)  ;
+        formDataObject.append( "genre", formData.genre );
+        formDataObject.append("image", formData.image);
 
         fetch(`http://localhost:3000/movies/admin`, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(formData)
+            
+            body: formDataObject
         })
             .then(res => res.json())
             .then(data => {
@@ -56,7 +59,7 @@ export default function AdminForm({ refreshTable }) {
             </div>
 
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="pb-4" encType="multipart/form-data">
                 <div className="container card bg-warning">
 
                     <div className="d-flex p-3 justify-content-around">
@@ -74,7 +77,7 @@ export default function AdminForm({ refreshTable }) {
                         </div>
                         <div className="d-flex gap-2">
                             <h3>Image:</h3>
-                            <input className="rounded" type="text" value={formData.image} onChange={(e) => setFormData({ ...formData, image: e.target.value })} />
+                            <input className="rounded" type="file"  onChange={(e) => setFormData({ ...formData, image: e.target.files[0] })} />
                         </div>
                     </div>
 

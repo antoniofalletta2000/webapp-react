@@ -1,16 +1,24 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MoviesMap from "../components/MoviesMap";
+import { useGlobalContext } from "../Context/GlobalContext";
 
 export default function HomePage() {
 
     const [movies, setMovies] = useState([]);
     const endpoint = "http://localhost:3000/movies"
+    const {setIsLoading} = useGlobalContext()
     
     useEffect(() => {
+
+        setIsLoading(true)
+
         fetch(endpoint)
             .then(res => res.json())
             .then(data => setMovies(data))
+            .finally(()=>{
+                setIsLoading(false)
+            })
     }, [])
 
     return (

@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import MovieReviewMap from "../components/MovieReviewMap";
 import FormReview from "../components/FormReview";
 import MovieDetails from "../components/MovieDetails";
+import { useGlobalContext } from "../Context/GlobalContext";
 
 
 export default function SingleMoviePage() {
@@ -12,11 +13,16 @@ export default function SingleMoviePage() {
     const url = "http://localhost:3000"
     const endpoint = `http://localhost:3000/movies/${id}`;
     const [openForm, setOpenForm] = useState(false);
+    const {setIsLoading} = useGlobalContext()
 
     function refreshData(){
+
+        setIsLoading(true)
+
         fetch(endpoint)
             .then(res => res.json())
-            .then(data => setMovie(data));
+            .then(data => setMovie(data))
+            .finally(()=>{setIsLoading(false)})
     }
 
     useEffect(refreshData, []);
