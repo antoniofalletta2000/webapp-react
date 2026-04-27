@@ -4,6 +4,8 @@ import HomePage from "../pages/HomePage";
 import SingleMoviePage from "../pages/SingleMoviePage";
 import AdminPage from "../pages/AdminPage";
 import {GlobalProvider} from "../Context/GlobalContext"
+import AdminTable from "../components/AdminTable";
+import AdminForm from "../components/AdminForm";
 function App() {
   
 
@@ -15,6 +17,8 @@ function App() {
           <Route index element={<HomePage/>}/>
           <Route path="/movie/:id" element={<SingleMoviePage/>}/>
           <Route path="/admin" element={<AdminPage/>}/>
+          <Route path="/admin/table" element={<AdminTable/>}/>
+          <Route path="/admin/form" element={<AdminForm/>}/>
         </Route>
       </Routes>
      </BrowserRouter>

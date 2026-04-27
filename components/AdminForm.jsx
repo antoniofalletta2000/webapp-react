@@ -1,4 +1,5 @@
 import { useState } from "react"
+import {Link} from "react-router-dom"
 
 export default function AdminForm({ refreshTable }) {
 
@@ -16,14 +17,14 @@ export default function AdminForm({ refreshTable }) {
         console.log(formData);
 
         const formDataObject = new FormData();
-        formDataObject.append("title", formData.title ) 
-        formDataObject.append("director", formData.director)  ;
-        formDataObject.append( "genre", formData.genre );
+        formDataObject.append("title", formData.title)
+        formDataObject.append("director", formData.director);
+        formDataObject.append("genre", formData.genre);
         formDataObject.append("image", formData.image);
 
         fetch(`http://localhost:3000/movies/admin`, {
             method: "POST",
-            
+
             body: formDataObject
         })
             .then(res => res.json())
@@ -58,6 +59,12 @@ export default function AdminForm({ refreshTable }) {
                     </div>}
             </div>
 
+            <div className="container mt-3">
+                <div className="d-flex justify-content-end pb-3">
+                    <Link className="text-decoration-none text-warning fw-bold bg-black p-2 rounded" to="/admin"><i id="exit" className="bi bi-box-arrow-left"></i></Link>
+                </div>
+            </div>
+
 
             <form onSubmit={handleSubmit} className="pb-4" encType="multipart/form-data">
                 <div className="container card bg-warning">
@@ -77,7 +84,7 @@ export default function AdminForm({ refreshTable }) {
                         </div>
                         <div className="d-flex gap-2">
                             <h3>Image:</h3>
-                            <input className="rounded" type="file"  onChange={(e) => setFormData({ ...formData, image: e.target.files[0] })} />
+                            <input className="rounded" type="file" onChange={(e) => setFormData({ ...formData, image: e.target.files[0] })} />
                         </div>
                     </div>
 
